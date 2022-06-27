@@ -19,9 +19,8 @@ function App() {
   const alphabet = ["A","B","C","D","E","F","G","H","I","İ","Ö","J","K","L","Ç","M","N","O","P","Q","R","Ü","S","T","U","V","Y","Z"];
 
   useEffect(() => {
-    let answers = ["KÖPEK", "ABONE", "ÇİÇEK", "BİLEK", "FEYAZ", "ÇİÇEK", "BEYAZ", "KİRAZ", "BAHAR", "PAMUK"]
+    let answers = ["KÖPEK", "ABONE", "ÇİÇEK", "BİLEK", "FEYAZ", "ÇİÇEK", "BEYAZ", "KİRAZ", "BAHAR", "PAMUK", "ACEMİ", "ALEVİ", "BESİN", "KEMAN"]
     let newAnswer = answers[Math.floor(Math.random()*answers.length)];
-    console.log(newAnswer)
     let newCount = {};
     newAnswer.split("").forEach(item => {
       if(newCount[item.toLocaleLowerCase()]){
@@ -184,7 +183,7 @@ function App() {
         <div className={clicked === "enter" ? "key clicked" : "key"} onClick={() => {handleKeyDown({key:"Enter"})}} style={{width:"100px"}}>Enter</div>
       </div>
       </div>
-      <Modal copied={copied} open={gameOver.over} win={gameOver.win} copy={copy} />
+      <Modal answer={answer} copied={copied} open={gameOver.over} win={gameOver.win} copy={copy} />
     </div>
   );
 }
