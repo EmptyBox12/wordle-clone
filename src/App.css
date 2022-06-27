@@ -1,38 +1,149 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.App{
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.over{
+  filter: brightness(0.6) blur(3px);
+}
+.title{
+  color: #fafafa;
+  font-size: 25px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid silver;
+  width: 100%;
+  height: 55px;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.row{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+  margin-bottom: 10px;
+  user-select: none;
+}
+.tile{
+  color: #fafafa;
+  border: 1px solid silver;
+  border-radius: 5px;
+  box-sizing: border-box;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.8s ease;  
+  font-weight: 500;
+  font-size: 18px;
+}
+.keyboard{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-top: 27px;
+  width: 700px;
+  gap: 10px;
+  user-select: none;
+}
+.key{
+  color: #e3e3e3;
+  width: 53px;
+  height: 53px;
+  border: 1px solid #c3c3c3;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.5s ease;  
+  transition: transform 0.1s ease;  
+  box-sizing: border-box;
+  font-weight: 500;
+  font-size: 17px;
+}
+.key:hover{
+  border: 2px solid white;
+}
+.clicked{
+  transform: scale(1.1);
+  border: 2px solid white;
+}
+.shaking{
+  animation: shake 0.5s;
 }
 
-.App-link {
-  color: #61dafb;
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.modal{
+  position: absolute;
+  top: 140px;
+  left: auto;
+  right: auto;
+  width: 550px;
+  height: 400px;
+  background-color: #404040;
+  border: 3px solid rgb(123, 123, 123);
+  box-sizing: border-box;
+  border-radius: 7px;
+  box-shadow: 0px 0px 7px 1px rgb(123, 123, 123);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.win{
+  font-size: 35px;
+  font-weight: 500;
+  margin-top: 85px;
+  width: 70%;
+  text-align: center;
+  padding-bottom: 5px;
+  border-bottom: 1px solid white;
+}
+.playButton{
+  display: flex;
+  color: #dcd7d7;
+  background-color:dimgrey;
+  align-items: center;
+  justify-content: center;
+  margin-top: 85px;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 6px;
+  width: 150px;
+  height: 60px;
+  user-select: none;
+  cursor: pointer;
+}
+.playButton:hover{
+  filter: brightness(0.9);
+}
+.playButton:active{
+  filter: brightness(0.8);
+}
+.copyText{
+  color: #fafafa;
+  margin-top: 15px;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+.copy{
+  opacity: 1;
 }
