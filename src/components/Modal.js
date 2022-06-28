@@ -1,5 +1,5 @@
 import React from 'react'
-import Key from './Key'
+import Tile from './Tile'
 
 export default function Modal({open, win, copy, copied, answer}) {
   return (
@@ -8,7 +8,7 @@ export default function Modal({open, win, copy, copied, answer}) {
       <div className='win' style={win ? {color:"green"} : {color:"#db0707"}}>{win ? "You Won!" : "You Lost!"}</div>
       <div className='row' style={{marginTop:"30px"}}>
       {answer.split("").map(element => {
-        return <Key handleKeyDown={() => {}} value={element} />
+        return <Tile passive={!win} green={win} value={element} />
       })}
       </div>
       <div style={{display:"flex"}}>

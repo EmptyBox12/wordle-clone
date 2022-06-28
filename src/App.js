@@ -19,7 +19,7 @@ function App() {
   const alphabet = ["A","B","C","D","E","F","G","H","I","İ","Ö","J","K","L","Ç","M","N","O","P","Q","R","Ü","S","T","U","V","Y","Z"];
 
   useEffect(() => {
-    let answers = ["KÖPEK", "ABONE", "ÇİÇEK", "BİLEK", "FEYAZ", "ÇİÇEK", "BEYAZ", "KİRAZ", "BAHAR", "PAMUK", "ACEMİ", "ALEVİ", "BESİN", "KEMAN"]
+    let answers = ["KÖPEK", "ABONE", "ÇİÇEK", "BİLEK", "ÇİÇEK", "BEYAZ", "KİRAZ", "BAHAR", "PAMUK", "ACEMİ", "ALEVİ", "BESİN", "KEMAN"]
     let newAnswer = answers[Math.floor(Math.random()*answers.length)];
     let newCount = {};
     newAnswer.split("").forEach(item => {
