@@ -1,4 +1,4 @@
-#wordle-clone
+# wordle-clone
 
 A dark themed wordle clone.
 
